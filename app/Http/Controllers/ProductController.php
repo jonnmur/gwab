@@ -19,7 +19,7 @@ class ProductController extends Controller
                 ->orWhereHas('attributes', function ($query) use ($search) {
                     $query->where('name', $search);
                 })->get();
-        } 
+        }
         else {
             $products = Product::all();
         }
@@ -53,10 +53,14 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->save();
 
+        $attributes = [];
+
+        // Select only valid attributes
         if (!empty($request->input('attributes'))) {
             $attributes = Attribute::whereIn('id', $request->input('attributes'));
         }
 
+        // Add product attributes (adds valid attributes only)
         if (!empty($attributes)) {
             $product->attributes()->attach($attributes->pluck('id'));
         }
@@ -85,17 +89,16 @@ class ProductController extends Controller
 
         $attributes = [];
 
+        // Select only valid attributes
         if (!empty($request->input('attributes'))) {
-            // Select only valid attributes
             $attributes = Attribute::whereIn('id', $request->input('attributes'));
         }
 
+        // Update product attributes (syncs with valid attributes or removes all existing)
         if (!empty($attributes)) {
-            // Update product attributes
             $product->attributes()->sync($attributes->pluck('id'));
         } 
         else {
-            // Remove all attributes ()
             $product->attributes()->detach();
         }
         
