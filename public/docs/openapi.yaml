@@ -107,7 +107,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: voluptatem
+                  example: expedita
               required:
                 - name
       security: []
@@ -201,7 +201,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: ut
+                  example: quo
               required:
                 - name
       security: []
@@ -256,7 +256,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: voluptas
+                  example: iusto
               required:
                 - name
       security: []
@@ -405,22 +405,37 @@ paths:
                 name:
                   type: string
                   description: 'Product name'
-                  example: maxime
+                  example: ut
                 price:
                   type: number
                   description: 'Product price'
-                  example: 391779.89500156
+                  example: 9.82597719
                 attributes:
                   type: array
                   description: 'List of attribute id''s'
                   example:
-                    - 20
+                    - 8
                   items:
                     type: integer
               required:
                 - name
                 - price
       security: []
+    parameters:
+      -
+        in: path
+        name: search
+        description: 'Optional parameter. Filter products by name of the product or attribute.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: ea
   '/api/products/{id}':
     get:
       summary: ''
@@ -531,16 +546,16 @@ paths:
                 name:
                   type: string
                   description: 'Product name'
-                  example: doloribus
+                  example: sed
                 price:
                   type: number
                   description: 'Product price'
-                  example: 48281.12768684
+                  example: 391488.96
                 attributes:
                   type: array
                   description: 'List of attribute id''s'
                   example:
-                    - 16
+                    - 20
                   items:
                     type: integer
               required:

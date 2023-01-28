@@ -13,7 +13,14 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
+    urlParameters:
+      search:
+        name: search
+        description: 'Filter products by name of the product or attribute.'
+        required: false
+        example: ea
+        type: string
+        custom: []
     queryParameters: []
     bodyParameters: []
     responses:
@@ -72,14 +79,14 @@ endpoints:
         name: name
         description: 'Product name'
         required: true
-        example: maxime
+        example: ut
         type: string
         custom: []
       price:
         name: price
         description: 'Product price'
         required: true
-        example: 391779.89500156
+        example: 9.82597719
         type: number
         custom: []
       attributes:
@@ -87,7 +94,7 @@ endpoints:
         description: 'List of attribute id''s'
         required: false
         example:
-          - 20
+          - 8
         type: 'integer[]'
         custom: []
     responses:
@@ -180,14 +187,14 @@ endpoints:
         name: name
         description: 'Product name'
         required: true
-        example: doloribus
+        example: sed
         type: string
         custom: []
       price:
         name: price
         description: 'Product price'
         required: true
-        example: 48281.12768684
+        example: 391488.96
         type: number
         custom: []
       attributes:
@@ -195,7 +202,7 @@ endpoints:
         description: 'List of attribute id''s'
         required: false
         example:
-          - 16
+          - 20
         type: 'integer[]'
         custom: []
     responses:

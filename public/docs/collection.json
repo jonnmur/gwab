@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "GoWorkaBit test assignment API",
-        "_postman_id": "2bc89767-107b-42f1-a18e-e838e8c6cf3e",
+        "_postman_id": "51cf7c37-1745-49e0-8039-c1baa71de2c3",
         "description": "This is a test assignment API auto generated documentation.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -76,7 +76,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\"}"
+                            "raw": "{\"name\":\"expedita\"}"
                         },
                         "description": "",
                         "auth": {
@@ -165,7 +165,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ut\"}"
+                            "raw": "{\"name\":\"quo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -211,7 +211,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptas\"}"
+                            "raw": "{\"name\":\"iusto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -240,7 +240,15 @@
                             "host": "{{baseUrl}}",
                             "path": "api\/products",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/products"
+                            "raw": "{{baseUrl}}\/api\/products",
+                            "variable": [
+                                {
+                                    "id": "search",
+                                    "key": "search",
+                                    "value": "ea",
+                                    "description": "Filter products by name of the product or attribute."
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -290,7 +298,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"maxime\",\"price\":391779.895001557,\"attributes\":[20]}"
+                            "raw": "{\"name\":\"ut\",\"price\":9.82597719,\"attributes\":[8]}"
                         },
                         "description": "",
                         "auth": {
@@ -379,7 +387,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"doloribus\",\"price\":48281.12768684,\"attributes\":[16]}"
+                            "raw": "{\"name\":\"sed\",\"price\":391488.96,\"attributes\":[20]}"
                         },
                         "description": "",
                         "auth": {

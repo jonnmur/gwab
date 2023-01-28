@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
     /**
+     * @urlParam search string Filter products by name of the product or attribute.
+     * 
      * @response 200
      * {
      *   "data": [
@@ -51,9 +53,9 @@ class ProductController extends Controller
         if ($request->has('search') && !empty($request->input('search'))) {
             $search = $request->input('search');
 
-            $products = Product::where('name', $search)
+            $products = Product::where('name', 'LIKE', '%'.$search.'%')
                 ->orWhereHas('attributes', function ($query) use ($search) {
-                    $query->where('name', $search);
+                    $query->where('name', 'LIKE', '%'.$search.'%');
                 })->get();
         }
         else {

@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var baseUrl = "http://localhost:8000";
+        var baseUrl = "http://localhost";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -260,7 +260,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptatem\"
+    \"name\": \"expedita\"
 }"
 </code></pre></div>
 
@@ -276,7 +276,7 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptatem"
+    "name": "expedita"
 };
 
 fetch(url, {
@@ -347,7 +347,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-attributes"
-               value="voluptatem"
+               value="expedita"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -472,7 +472,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ut\"
+    \"name\": \"quo\"
 }"
 </code></pre></div>
 
@@ -488,7 +488,7 @@ const headers = {
 };
 
 let body = {
-    "name": "ut"
+    "name": "quo"
 };
 
 fetch(url, {
@@ -574,7 +574,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-attributes--id-"
-               value="ut"
+               value="quo"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -598,7 +598,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptas\"
+    \"name\": \"iusto\"
 }"
 </code></pre></div>
 
@@ -614,7 +614,7 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptas"
+    "name": "iusto"
 };
 
 fetch(url, {
@@ -696,7 +696,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="DELETEapi-attributes--id-"
-               value="voluptas"
+               value="iusto"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -819,6 +819,17 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>api/products</code></b>
         </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>search</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="search"
+               data-endpoint="GETapi-products"
+               value="ea"
+               data-component="url" hidden>
+    <br>
+<p>Filter products by name of the product or attribute.</p>
+            </p>
                     </form>
 
             <h2 id="products-POSTapi-products">POST api/products</h2>
@@ -838,10 +849,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"maxime\",
-    \"price\": 391779.895001557,
+    \"name\": \"ut\",
+    \"price\": 9.82597719,
     \"attributes\": [
-        20
+        8
     ]
 }"
 </code></pre></div>
@@ -858,10 +869,10 @@ const headers = {
 };
 
 let body = {
-    "name": "maxime",
-    "price": 391779.895001557,
+    "name": "ut",
+    "price": 9.82597719,
     "attributes": [
-        20
+        8
     ]
 };
 
@@ -940,7 +951,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-products"
-               value="maxime"
+               value="ut"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -950,7 +961,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="POSTapi-products"
-               value="391779.89500156"
+               value="9.82597719"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
@@ -1095,10 +1106,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"doloribus\",
-    \"price\": 48281.12768684,
+    \"name\": \"sed\",
+    \"price\": 391488.96,
     \"attributes\": [
-        16
+        20
     ]
 }"
 </code></pre></div>
@@ -1115,10 +1126,10 @@ const headers = {
 };
 
 let body = {
-    "name": "doloribus",
-    "price": 48281.12768684,
+    "name": "sed",
+    "price": 391488.96,
     "attributes": [
-        16
+        20
     ]
 };
 
@@ -1212,7 +1223,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-products--id-"
-               value="doloribus"
+               value="sed"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -1222,7 +1233,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="PUTapi-products--id-"
-               value="48281.12768684"
+               value="391488.96"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
