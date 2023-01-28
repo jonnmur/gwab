@@ -74,6 +74,104 @@ class ProductTest extends TestCase
         ]);
     }
 
+    public function testApiGetFiltersProductsByProductName()
+    {
+        // Create attributes
+        $attribute1 = new Attribute();
+        $attribute1->name = 'Food and Drinks';
+        $attribute1->save();
+
+        $attribute2 = new Attribute();
+        $attribute2->name = 'Tech and Machines';
+        $attribute2->save();
+
+        // Create products
+        $product1 = new Product();
+        $product1->name = '1L Milk';
+        $product1->price = 1.19;
+        $product1->save();
+
+        $product1->attributes()->attach([$attribute1->id]);
+
+        $product2 = new Product();
+        $product2->name = 'Very Nice Microwave';
+        $product2->price = 299.99;
+        $product2->save();
+
+        $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
+
+        $response = $this->call('GET', '/api/products', [
+            'search' => 'milk'
+        ]);
+
+        $response->assertStatus(200);
+
+        $response->assertJson([
+            'data' => [
+                [
+                    'id' => $product1->id,
+                    'name' => $product1->name,
+                    'price' => $product1->price,
+                    'attributes' => [
+                        [
+                            'id' => $attribute1->id,
+                            'name' => $attribute1->name,
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+    }
+
+    public function testApiGetFiltersProductsByAttributeName()
+    {
+        // Create attributes
+        $attribute1 = new Attribute();
+        $attribute1->name = 'Food and Drinks';
+        $attribute1->save();
+
+        $attribute2 = new Attribute();
+        $attribute2->name = 'Tech and Machines';
+        $attribute2->save();
+
+        // Create products
+        $product1 = new Product();
+        $product1->name = '1L Milk';
+        $product1->price = 1.19;
+        $product1->save();
+
+        $product1->attributes()->attach([$attribute1->id]);
+
+        $product2 = new Product();
+        $product2->name = 'Very Nice Microwave';
+        $product2->price = 299.99;
+        $product2->save();
+
+        $product2->attributes()->attach([$attribute1->id]);
+
+        $response = $this->call('GET', '/api/products', [
+            'search' => 'food'
+        ]);
+
+        $response->assertStatus(200);
+
+        $response->assertJson([
+            'data' => [
+                [
+                    'id' => $product1->id,
+                    'name' => $product1->name,
+                    'price' => $product1->price,
+                    'attributes' => [
+                        [
+                            'id' => $attribute1->id,
+                            'name' => $attribute1->name,
+                        ],
+                    ],
+                ],
+            ],
+        ]);
+    }
+
     public function testApiGetReturnsSingleProductById()
     {
         // Create attributes
