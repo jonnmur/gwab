@@ -7,10 +7,25 @@ use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Attributes
+ */
 class AttributeController extends Controller
 {
     /**
-     * @return Response
+     * @response 200
+     * {
+     *   "data": [
+     *     {
+     *       "id": 1,
+     *       "name": "Tech"
+     *     },
+     *     {
+     *       "id": 2,
+     *       "name": "Home/Deco"
+     *     }
+     *   ]
+     * }
      */
     public function index()
     {
@@ -20,8 +35,13 @@ class AttributeController extends Controller
     }
 
     /**
-     * @param int $id
-     * @return Response
+     * @response 200
+     * {
+     *   "data": {
+     *       "id": 1,
+     *       "name": "Tech"
+     *   }
+     * }
      */
     public function show(int $id)
     {
@@ -35,8 +55,16 @@ class AttributeController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Response
+     * @bodyParam name string required Attribute name
+     * 
+     * @response 201
+     * {
+     *   "message": "Attribute Created",
+     *   "data": {
+     *       "id": 1,
+     *       "name": "Tech"
+     *   }
+     * }
      */
     public function store(Request $request)
     {
@@ -62,9 +90,16 @@ class AttributeController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @param int $id
-     * @return Response
+     * @bodyParam name string required Attribute name
+     * 
+     * @response 200
+     * {
+     *   "message": "Attribute Updated",
+     *   "data": {
+     *       "id": 1,
+     *       "name": "Tech"
+     *   }
+     * }
      */
     public function update(Request $request, int $id)
     {
@@ -95,8 +130,16 @@ class AttributeController extends Controller
     }
 
     /**
-     * @param int $id
-     * @return Response
+     * @bodyParam name string required Attribute name
+     * 
+     * @response 200
+     * {
+     *   "message": "Attribute Deleted",
+     *   "data": {
+     *       "id": 1,
+     *       "name": "Tech"
+     *   }
+     * }
      */
     public function destroy(int $id)
     {
@@ -106,6 +149,7 @@ class AttributeController extends Controller
             return response()->json(['message' => 'Not Found'], 404);
         }
 
+        $attribute->products()->detach();
         $attribute->delete();
 
         return response()->json([

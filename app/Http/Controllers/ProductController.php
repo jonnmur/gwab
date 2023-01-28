@@ -8,11 +8,43 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @group Products
+ */
 class ProductController extends Controller
 {
     /**
-     * @param Request $request
-     * @return Response
+     * @response 200
+     * {
+     *   "data": [
+     *     {
+     *       "id": 30,
+     *       "name": "Lego Technic",
+     *       "price": 59.99,
+     *       "attributes": [
+     *           {
+     *               "id": 7,
+     *               "name": "Toys"
+     *           }
+     *       ]
+     *     },
+     *     {
+     *       "id": 31,
+     *       "name": "TV",
+     *       "price": 959.99,
+     *       "attributes": [
+     *           {
+     *               "id": 1,
+     *               "name": "Tech"
+     *           },
+     *           {
+     *               "id": 2,
+     *               "name": "Home/Deco"
+     *           }
+     *       ]
+     *     }
+     *   ]
+     * }
      */
     public function index(Request $request)
     {
@@ -32,8 +64,20 @@ class ProductController extends Controller
     }
 
     /**
-     * @param int $id
-     * @return Response
+     * @response 200
+     * {
+     *   "data": {
+     *       "id": 30,
+     *       "name": "Lego Technic",
+     *       "price": 59.99,
+     *       "attributes": [
+     *           {
+     *               "id": 7,
+     *               "name": "Toys"
+     *           }
+     *       ]
+     *   }
+     * }
      */
     public function show(int $id)
     {
@@ -47,8 +91,25 @@ class ProductController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Response
+     * @bodyParam name string required Product name
+     * @bodyParam price double required Product price
+     * @bodyParam attributes integer[] List of attribute id's
+     * 
+     * @response 201
+     * {
+     *   "message": "Product Created",
+     *   "data": {
+     *       "id": 30,
+     *       "name": "Lego Technic",
+     *       "price": 59.99,
+     *       "attributes": [
+     *           {
+     *               "id": 7,
+     *               "name": "Toys"
+     *           }
+     *       ]
+     *   }
+     * }
      */
     public function store(Request $request)
     {
@@ -88,9 +149,25 @@ class ProductController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @param int $id
-     * @return Response
+     * @bodyParam name string required Product name
+     * @bodyParam price double required Product price
+     * @bodyParam attributes integer[] List of attribute id's
+     * 
+     * @response 200
+     * {
+     *   "message": "Product Updated",
+     *   "data": {
+     *       "id": 30,
+     *       "name": "Lego Technic",
+     *       "price": 59.99,
+     *       "attributes": [
+     *           {
+     *               "id": 7,
+     *               "name": "Toys"
+     *           }
+     *       ]
+     *   }
+     * }
      */
     public function update(Request $request, int $id)
     {
@@ -138,8 +215,21 @@ class ProductController extends Controller
     }
 
     /**
-     * @param int $id
-     * @return Response
+     * @response 200
+     * {
+     *   "message": "Product Deleted",
+     *   "data": {
+     *       "id": 30,
+     *       "name": "Lego Technic",
+     *       "price": 59.99,
+     *       "attributes": [
+     *           {
+     *               "id": 7,
+     *               "name": "Toys"
+     *           }
+     *       ]
+     *   }
+     * }
      */
     public function destroy(int $id)
     {

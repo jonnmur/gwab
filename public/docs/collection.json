@@ -1,0 +1,447 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "GoWorkaBit test assignment API",
+        "_postman_id": "2bc89767-107b-42f1-a18e-e838e8c6cf3e",
+        "description": "This is a test assignment API auto generated documentation.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Attributes",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/attributes",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attributes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/attributes"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"Tech\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"Home\/Deco\"\n    }\n  ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/attributes",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attributes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/attributes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"voluptatem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"message\": \"Attribute Created\",\n  \"data\": {\n      \"id\": 1,\n      \"name\": \"Tech\"\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/attributes\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attributes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/attributes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the attribute."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": {\n      \"id\": 1,\n      \"name\": \"Tech\"\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/attributes\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attributes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/attributes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the attribute."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"ut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Attribute Updated\",\n  \"data\": {\n      \"id\": 1,\n      \"name\": \"Tech\"\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/attributes\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attributes\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/attributes\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the attribute."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"voluptas\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Attribute Deleted\",\n  \"data\": {\n      \"id\": 1,\n      \"name\": \"Tech\"\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n    {\n      \"id\": 30,\n      \"name\": \"Lego Technic\",\n      \"price\": 59.99,\n      \"attributes\": [\n          {\n              \"id\": 7,\n              \"name\": \"Toys\"\n          }\n      ]\n    },\n    {\n      \"id\": 31,\n      \"name\": \"TV\",\n      \"price\": 959.99,\n      \"attributes\": [\n          {\n              \"id\": 1,\n              \"name\": \"Tech\"\n          },\n          {\n              \"id\": 2,\n              \"name\": \"Home\/Deco\"\n          }\n      ]\n    }\n  ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"maxime\",\"price\":391779.895001557,\"attributes\":[20]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"message\": \"Product Created\",\n  \"data\": {\n      \"id\": 30,\n      \"name\": \"Lego Technic\",\n      \"price\": 59.99,\n      \"attributes\": [\n          {\n              \"id\": 7,\n              \"name\": \"Toys\"\n          }\n      ]\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": {\n      \"id\": 30,\n      \"name\": \"Lego Technic\",\n      \"price\": 59.99,\n      \"attributes\": [\n          {\n              \"id\": 7,\n              \"name\": \"Toys\"\n          }\n      ]\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"doloribus\",\"price\":48281.12768684,\"attributes\":[16]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Product Updated\",\n  \"data\": {\n      \"id\": 30,\n      \"name\": \"Lego Technic\",\n      \"price\": 59.99,\n      \"attributes\": [\n          {\n              \"id\": 7,\n              \"name\": \"Toys\"\n          }\n      ]\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"message\": \"Product Deleted\",\n  \"data\": {\n      \"id\": 30,\n      \"name\": \"Lego Technic\",\n      \"price\": 59.99,\n      \"attributes\": [\n          {\n              \"id\": 7,\n              \"name\": \"Toys\"\n          }\n      ]\n  }\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

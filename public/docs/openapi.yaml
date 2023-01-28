@@ -1,0 +1,617 @@
+openapi: 3.0.3
+info:
+  title: 'GoWorkaBit test assignment API'
+  description: 'This is a test assignment API auto generated documentation.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/attributes:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: Tech
+                    -
+                      id: 2
+                      name: Home/Deco
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Tech
+                      -
+                        id: 2
+                        name: Home/Deco
+                    items:
+                      type: object
+      tags:
+        - Attributes
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Attribute Created'
+                  data:
+                    id: 1
+                    name: Tech
+                properties:
+                  message:
+                    type: string
+                    example: 'Attribute Created'
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: Tech
+      tags:
+        - Attributes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Attribute name'
+                  example: voluptatem
+              required:
+                - name
+      security: []
+  '/api/attributes/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: Tech
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: Tech
+      tags:
+        - Attributes
+      security: []
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Attribute Updated'
+                  data:
+                    id: 1
+                    name: Tech
+                properties:
+                  message:
+                    type: string
+                    example: 'Attribute Updated'
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: Tech
+      tags:
+        - Attributes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Attribute name'
+                  example: ut
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Attribute Deleted'
+                  data:
+                    id: 1
+                    name: Tech
+                properties:
+                  message:
+                    type: string
+                    example: 'Attribute Deleted'
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: Tech
+      tags:
+        - Attributes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Attribute name'
+                  example: voluptas
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the attribute.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/products:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 30
+                      name: 'Lego Technic'
+                      price: 59.99
+                      attributes:
+                        -
+                          id: 7
+                          name: Toys
+                    -
+                      id: 31
+                      name: TV
+                      price: 959.99
+                      attributes:
+                        -
+                          id: 1
+                          name: Tech
+                        -
+                          id: 2
+                          name: Home/Deco
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 30
+                        name: 'Lego Technic'
+                        price: 59.99
+                        attributes:
+                          -
+                            id: 7
+                            name: Toys
+                      -
+                        id: 31
+                        name: TV
+                        price: 959.99
+                        attributes:
+                          -
+                            id: 1
+                            name: Tech
+                          -
+                            id: 2
+                            name: Home/Deco
+                    items:
+                      type: object
+      tags:
+        - Products
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Product Created'
+                  data:
+                    id: 30
+                    name: 'Lego Technic'
+                    price: 59.99
+                    attributes:
+                      -
+                        id: 7
+                        name: Toys
+                properties:
+                  message:
+                    type: string
+                    example: 'Product Created'
+                  data:
+                    type: object
+                    example:
+                      id: 30
+                      name: 'Lego Technic'
+                      price: 59.99
+                      attributes:
+                        -
+                          id: 7
+                          name: Toys
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Product name'
+                  example: maxime
+                price:
+                  type: number
+                  description: 'Product price'
+                  example: 391779.89500156
+                attributes:
+                  type: array
+                  description: 'List of attribute id''s'
+                  example:
+                    - 20
+                  items:
+                    type: integer
+              required:
+                - name
+                - price
+      security: []
+  '/api/products/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 30
+                    name: 'Lego Technic'
+                    price: 59.99
+                    attributes:
+                      -
+                        id: 7
+                        name: Toys
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 30
+                      name: 'Lego Technic'
+                      price: 59.99
+                      attributes:
+                        -
+                          id: 7
+                          name: Toys
+      tags:
+        - Products
+      security: []
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Product Updated'
+                  data:
+                    id: 30
+                    name: 'Lego Technic'
+                    price: 59.99
+                    attributes:
+                      -
+                        id: 7
+                        name: Toys
+                properties:
+                  message:
+                    type: string
+                    example: 'Product Updated'
+                  data:
+                    type: object
+                    example:
+                      id: 30
+                      name: 'Lego Technic'
+                      price: 59.99
+                      attributes:
+                        -
+                          id: 7
+                          name: Toys
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Product name'
+                  example: doloribus
+                price:
+                  type: number
+                  description: 'Product price'
+                  example: 48281.12768684
+                attributes:
+                  type: array
+                  description: 'List of attribute id''s'
+                  example:
+                    - 16
+                  items:
+                    type: integer
+              required:
+                - name
+                - price
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Product Deleted'
+                  data:
+                    id: 30
+                    name: 'Lego Technic'
+                    price: 59.99
+                    attributes:
+                      -
+                        id: 7
+                        name: Toys
+                properties:
+                  message:
+                    type: string
+                    example: 'Product Deleted'
+                  data:
+                    type: object
+                    example:
+                      id: 30
+                      name: 'Lego Technic'
+                      price: 59.99
+                      attributes:
+                        -
+                          id: 7
+                          name: Toys
+      tags:
+        - Products
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Attributes
+    description: ''
+  -
+    name: Products
+    description: ''
