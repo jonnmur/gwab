@@ -8,5 +8,5 @@
 ## Usage
 
 1. Run `php artisan serve` to start the PHP development server.
-2. Read API documentation: http://127.0.0.1:8000/docs
+2. Read API documentation: `your_development_server_url/docs`.
 3. Make requests to provided endpoints
