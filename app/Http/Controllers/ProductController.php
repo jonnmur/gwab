@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function index(Request $request)
     {
         if ($request->has('search') && !empty($request->input('search'))) {
@@ -27,13 +31,25 @@ class ProductController extends Controller
         return ProductResource::collection($products);
     }
 
-    public function show($id)
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function show(int $id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::find($id);
+
+        if (empty($product)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
 
         return new ProductResource($product);
     }
 
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function store(Request $request)
     {
         $validator = Validator::make(
@@ -65,11 +81,25 @@ class ProductController extends Controller
             $product->attributes()->attach($attributes->pluck('id'));
         }
 
-        return new ProductResource($product);
+        return response()->json([
+            'message' => 'Product Created',
+            'data' => new ProductResource($product)
+        ], 201);
     }
 
-    public function update(Request $request, $id)
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(Request $request, int $id)
     {
+        $product = Product::find($id);
+
+        if (empty($product)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
+
         $validator = Validator::make(
             $request->all(),
             [
@@ -82,7 +112,6 @@ class ProductController extends Controller
             return response(['errors' => $validator->errors()], 422);
         }
 
-        $product = Product::findOrFail($id);
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->save();
@@ -101,16 +130,31 @@ class ProductController extends Controller
         else {
             $product->attributes()->detach();
         }
-        
-        return new ProductResource($product);
+
+        return response()->json([
+            'message' => 'Product Updated',
+            'data' => new ProductResource($product)
+        ], 200);
     }
 
-    public function destroy($id)
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function destroy(int $id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::find($id);
+
+        if (empty($product)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
+
         $product->attributes()->detach();
         $product->delete();
 
-        return new ProductResource($product);
+        return response()->json([
+            'message' => 'Product Deleted',
+            'data' => new ProductResource($product)
+        ], 200);
     }
 }

@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Validator;
 
 class AttributeController extends Controller
 {
+    /**
+     * @return Response
+     */
     public function index()
     {
         $attributes = Attribute::all();
@@ -16,19 +19,31 @@ class AttributeController extends Controller
         return AttributeResource::collection($attributes);
     }
 
-    public function show($id)
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function show(int $id)
     {
-        $attribute = Attribute::findOrFail($id);
+        $attribute = Attribute::find($id);
+
+        if (empty($attribute)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
 
         return new AttributeResource($attribute);
     }
 
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function store(Request $request)
     {
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',
+                'name' => 'required|max:255',
             ],
         );
 
@@ -40,15 +55,29 @@ class AttributeController extends Controller
         $attribute->name = $request->input('name');
         $attribute->save();
 
-        return new AttributeResource($attribute);
+        return response()->json([
+            'message' => 'Attribute Created',
+            'data' => new AttributeResource($attribute)
+        ], 201);
     }
 
-    public function update(Request $request, $id)
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(Request $request, int $id)
     {
+        $attribute = Attribute::find($id);
+
+        if (empty($attribute)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
+
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',
+                'name' => 'required|max:255',
             ],
         );
 
@@ -56,18 +85,32 @@ class AttributeController extends Controller
             return response(['errors' => $validator->errors()], 422);
         }
 
-        $attribute = Attribute::findOrFail($id);
         $attribute->name = $request->input('name');
         $attribute->save();
-        
-        return new AttributeResource($attribute);
+
+        return response()->json([
+            'message' => 'Attribute Updated',
+            'data' => new AttributeResource($attribute)
+        ], 200);
     }
 
-    public function destroy($id)
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function destroy(int $id)
     {
-        $attribute = Attribute::findOrFail($id);
+        $attribute = Attribute::find($id);
+
+        if (empty($attribute)) {
+            return response()->json(['message' => 'Not Found'], 404);
+        }
+
         $attribute->delete();
 
-        return new AttributeResource($attribute);
+        return response()->json([
+            'message' => 'Attribute Deleted',
+            'data' => new AttributeResource($attribute)
+        ], 200);
     }
 }
