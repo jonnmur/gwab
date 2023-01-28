@@ -25,12 +25,6 @@
                     body .content .javascript-example code { display: none; }
             </style>
 
-    <script>
-        var baseUrl = "http://localhost";
-        var useCsrf = Boolean();
-        var csrfUrl = "/sanctum/csrf-cookie";
-    </script>
-    <script src="../docs/js/tryitout-3.37.2.js"></script>
 
     <script src="../docs/js/theme-default-3.37.2.js"></script>
 
@@ -222,20 +216,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('GETapi-attributes', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-attributes"
-                    onclick="tryItOut('GETapi-attributes');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-attributes"
-                    onclick="cancelTryOut('GETapi-attributes');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-attributes" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -260,7 +240,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"expedita\"
+    \"name\": \"fugiat\"
 }"
 </code></pre></div>
 
@@ -276,7 +256,7 @@ const headers = {
 };
 
 let body = {
-    "name": "expedita"
+    "name": "fugiat"
 };
 
 fetch(url, {
@@ -322,20 +302,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-attributes', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-attributes"
-                    onclick="tryItOut('POSTapi-attributes');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-attributes"
-                    onclick="cancelTryOut('POSTapi-attributes');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-attributes" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
@@ -347,7 +313,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-attributes"
-               value="expedita"
+               value="fugiat"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -423,20 +389,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('GETapi-attributes--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-attributes--id-"
-                    onclick="tryItOut('GETapi-attributes--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-attributes--id-"
-                    onclick="cancelTryOut('GETapi-attributes--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-attributes--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -472,7 +424,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quo\"
+    \"name\": \"necessitatibus\"
 }"
 </code></pre></div>
 
@@ -488,7 +440,7 @@ const headers = {
 };
 
 let body = {
-    "name": "quo"
+    "name": "necessitatibus"
 };
 
 fetch(url, {
@@ -534,20 +486,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-attributes--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-attributes--id-"
-                    onclick="tryItOut('PUTapi-attributes--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-attributes--id-"
-                    onclick="cancelTryOut('PUTapi-attributes--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-attributes--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
@@ -574,7 +512,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-attributes--id-"
-               value="quo"
+               value="necessitatibus"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -598,7 +536,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"iusto\"
+    \"name\": \"voluptatum\"
 }"
 </code></pre></div>
 
@@ -614,7 +552,7 @@ const headers = {
 };
 
 let body = {
-    "name": "iusto"
+    "name": "voluptatum"
 };
 
 fetch(url, {
@@ -660,20 +598,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-attributes--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-attributes--id-"
-                    onclick="tryItOut('DELETEapi-attributes--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-attributes--id-"
-                    onclick="cancelTryOut('DELETEapi-attributes--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-attributes--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>
@@ -696,7 +620,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="DELETEapi-attributes--id-"
-               value="iusto"
+               value="voluptatum"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -800,20 +724,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('GETapi-products', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-products"
-                    onclick="tryItOut('GETapi-products');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-products"
-                    onclick="cancelTryOut('GETapi-products');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-products" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -825,7 +735,7 @@ fetch(url, {
                 <input type="text"
                name="search"
                data-endpoint="GETapi-products"
-               value="ea"
+               value="ipsam"
                data-component="url" hidden>
     <br>
 <p>Filter products by name of the product or attribute.</p>
@@ -849,10 +759,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ut\",
-    \"price\": 9.82597719,
+    \"name\": \"cum\",
+    \"price\": 84763501.95,
     \"attributes\": [
-        8
+        12
     ]
 }"
 </code></pre></div>
@@ -869,10 +779,10 @@ const headers = {
 };
 
 let body = {
-    "name": "ut",
-    "price": 9.82597719,
+    "name": "cum",
+    "price": 84763501.95,
     "attributes": [
-        8
+        12
     ]
 };
 
@@ -926,20 +836,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-products', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-products"
-                    onclick="tryItOut('POSTapi-products');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-products"
-                    onclick="cancelTryOut('POSTapi-products');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-products" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
@@ -951,7 +847,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-products"
-               value="ut"
+               value="cum"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -961,7 +857,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="POSTapi-products"
-               value="9.82597719"
+               value="84763501.95"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
@@ -1057,20 +953,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('GETapi-products--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-products--id-"
-                    onclick="tryItOut('GETapi-products--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-products--id-"
-                    onclick="cancelTryOut('GETapi-products--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-products--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
@@ -1106,10 +988,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"sed\",
-    \"price\": 391488.96,
+    \"name\": \"culpa\",
+    \"price\": 29.2,
     \"attributes\": [
-        20
+        12
     ]
 }"
 </code></pre></div>
@@ -1126,10 +1008,10 @@ const headers = {
 };
 
 let body = {
-    "name": "sed",
-    "price": 391488.96,
+    "name": "culpa",
+    "price": 29.2,
     "attributes": [
-        20
+        12
     ]
 };
 
@@ -1183,20 +1065,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-products--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-products--id-"
-                    onclick="tryItOut('PUTapi-products--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-products--id-"
-                    onclick="cancelTryOut('PUTapi-products--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-products--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-darkblue">PUT</small>
@@ -1223,7 +1091,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-products--id-"
-               value="sed"
+               value="culpa"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -1233,7 +1101,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="PUTapi-products--id-"
-               value="391488.96"
+               value="29.2"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
@@ -1330,20 +1198,6 @@ fetch(url, {
       onsubmit="event.preventDefault(); executeTryOut('DELETEapi-products--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-products--id-"
-                    onclick="tryItOut('DELETEapi-products--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-products--id-"
-                    onclick="cancelTryOut('DELETEapi-products--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-products--id-" hidden>Send Request 💥
-            </button>
             </h3>
             <p>
             <small class="badge badge-red">DELETE</small>

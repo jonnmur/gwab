@@ -56,7 +56,7 @@ endpoints:
         name: name
         description: 'Attribute name'
         required: true
-        example: expedita
+        example: fugiat
         type: string
         custom: []
     responses:
@@ -135,7 +135,7 @@ endpoints:
         name: name
         description: 'Attribute name'
         required: true
-        example: quo
+        example: necessitatibus
         type: string
         custom: []
     responses:
@@ -178,7 +178,7 @@ endpoints:
         name: name
         description: 'Attribute name'
         required: true
-        example: iusto
+        example: voluptatum
         type: string
         custom: []
     responses:

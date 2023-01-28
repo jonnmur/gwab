@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "GoWorkaBit test assignment API",
-        "_postman_id": "51cf7c37-1745-49e0-8039-c1baa71de2c3",
+        "_postman_id": "b3e0b806-8e14-4dbb-8c75-704a9b0c1e56",
         "description": "This is a test assignment API auto generated documentation.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -76,7 +76,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"expedita\"}"
+                            "raw": "{\"name\":\"fugiat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -165,7 +165,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quo\"}"
+                            "raw": "{\"name\":\"necessitatibus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -211,7 +211,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"iusto\"}"
+                            "raw": "{\"name\":\"voluptatum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -245,7 +245,7 @@
                                 {
                                     "id": "search",
                                     "key": "search",
-                                    "value": "ea",
+                                    "value": "ipsam",
                                     "description": "Filter products by name of the product or attribute."
                                 }
                             ]
@@ -298,7 +298,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ut\",\"price\":9.82597719,\"attributes\":[8]}"
+                            "raw": "{\"name\":\"cum\",\"price\":84763501.95,\"attributes\":[12]}"
                         },
                         "description": "",
                         "auth": {
@@ -387,7 +387,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sed\",\"price\":391488.96,\"attributes\":[20]}"
+                            "raw": "{\"name\":\"culpa\",\"price\":29.2,\"attributes\":[12]}"
                         },
                         "description": "",
                         "auth": {

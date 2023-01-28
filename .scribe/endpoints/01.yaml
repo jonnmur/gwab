@@ -18,7 +18,7 @@ endpoints:
         name: search
         description: 'Filter products by name of the product or attribute.'
         required: false
-        example: ea
+        example: ipsam
         type: string
         custom: []
     queryParameters: []
@@ -79,14 +79,14 @@ endpoints:
         name: name
         description: 'Product name'
         required: true
-        example: ut
+        example: cum
         type: string
         custom: []
       price:
         name: price
         description: 'Product price'
         required: true
-        example: 9.82597719
+        example: 84763501.95
         type: number
         custom: []
       attributes:
@@ -94,7 +94,7 @@ endpoints:
         description: 'List of attribute id''s'
         required: false
         example:
-          - 8
+          - 12
         type: 'integer[]'
         custom: []
     responses:
@@ -187,14 +187,14 @@ endpoints:
         name: name
         description: 'Product name'
         required: true
-        example: sed
+        example: culpa
         type: string
         custom: []
       price:
         name: price
         description: 'Product price'
         required: true
-        example: 391488.96
+        example: 29.2
         type: number
         custom: []
       attributes:
@@ -202,7 +202,7 @@ endpoints:
         description: 'List of attribute id''s'
         required: false
         example:
-          - 20
+          - 12
         type: 'integer[]'
         custom: []
     responses:

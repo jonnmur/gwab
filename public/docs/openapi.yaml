@@ -107,7 +107,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: expedita
+                  example: fugiat
               required:
                 - name
       security: []
@@ -201,7 +201,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: quo
+                  example: necessitatibus
               required:
                 - name
       security: []
@@ -256,7 +256,7 @@ paths:
                 name:
                   type: string
                   description: 'Attribute name'
-                  example: iusto
+                  example: voluptatum
               required:
                 - name
       security: []
@@ -405,16 +405,16 @@ paths:
                 name:
                   type: string
                   description: 'Product name'
-                  example: ut
+                  example: cum
                 price:
                   type: number
                   description: 'Product price'
-                  example: 9.82597719
+                  example: 84763501.95
                 attributes:
                   type: array
                   description: 'List of attribute id''s'
                   example:
-                    - 8
+                    - 12
                   items:
                     type: integer
               required:
@@ -435,7 +435,7 @@ paths:
             value: ''
           present:
             summary: 'When the value is present'
-            value: ea
+            value: ipsam
   '/api/products/{id}':
     get:
       summary: ''
@@ -546,16 +546,16 @@ paths:
                 name:
                   type: string
                   description: 'Product name'
-                  example: sed
+                  example: culpa
                 price:
                   type: number
                   description: 'Product price'
-                  example: 391488.96
+                  example: 29.2
                 attributes:
                   type: array
                   description: 'List of attribute id''s'
                   example:
-                    - 20
+                    - 12
                   items:
                     type: integer
               required:
