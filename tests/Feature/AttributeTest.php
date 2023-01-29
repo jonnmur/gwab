@@ -25,7 +25,7 @@ class AttributeTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 [
                     'id' => $attribute1->id,
@@ -54,7 +54,7 @@ class AttributeTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 'id' => $attribute1->id,
                 'name' => $attribute1->name,

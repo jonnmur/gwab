@@ -26,14 +26,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = 'Testing Product 1';
-        $product1->price = 11.99;
+        $product1->price = '11.99';
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Testing Product 2';
-        $product2->price = 12.99;
+        $product2->price = '12.99';
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -42,7 +42,7 @@ class ProductTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 [
                     'id' => $product1->id,
@@ -88,14 +88,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = '1L Milk';
-        $product1->price = 1.19;
+        $product1->price = '1.19';
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Very Nice Microwave';
-        $product2->price = 299.99;
+        $product2->price = '299.99';
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -106,7 +106,7 @@ class ProductTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 [
                     'id' => $product1->id,
@@ -137,17 +137,24 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = '1L Milk';
-        $product1->price = 1.19;
+        $product1->price = '1.19';
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Very Nice Microwave';
-        $product2->price = 299.99;
+        $product2->price = '299.99';
         $product2->save();
 
-        $product2->attributes()->attach([$attribute1->id]);
+        $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
+
+        $product3 = new Product();
+        $product3->name = 'Phone';
+        $product3->price = '959.99';
+        $product3->save();
+
+        $product3->attributes()->attach([$attribute2->id]);
 
         $response = $this->call('GET', '/api/products', [
             'search' => 'food'
@@ -155,7 +162,7 @@ class ProductTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 [
                     'id' => $product1->id,
@@ -165,6 +172,21 @@ class ProductTest extends TestCase
                         [
                             'id' => $attribute1->id,
                             'name' => $attribute1->name,
+                        ],
+                    ],
+                ],
+                [
+                    'id' => $product2->id,
+                    'name' => $product2->name,
+                    'price' => $product2->price,
+                    'attributes' => [
+                        [
+                            'id' => $attribute1->id,
+                            'name' => $attribute1->name,
+                        ],
+                        [
+                            'id' => $attribute2->id,
+                            'name' => $attribute2->name,
                         ],
                     ],
                 ],
@@ -186,14 +208,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = 'Testing Product 1';
-        $product1->price = 11.99;
+        $product1->price = '11.99';
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Testing Product 2';
-        $product2->price = 12.99;
+        $product2->price = '12.99';
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -202,7 +224,7 @@ class ProductTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 'id' => $product1->id,
                 'name' => $product1->name,
@@ -238,13 +260,15 @@ class ProductTest extends TestCase
         $response = $this->call('POST', '/api/products/', [
             'name' => 'Testing Product',
             'price' => 13.99,
-            'attributes' => [$attribute1->id, $attribute2->id],
+            'attributes' => [$attribute1->id, $attribute2->id, 9999],
         ]);
 
         $response->assertStatus(201);
 
         $this->assertEquals('Product Created', $response->json()['message']);
         $this->assertEquals('Testing Product', $response->json()['data']['name']);
+        $this->assertEquals('13.99', $response->json()['data']['price']);
+        $this->assertCount(2, $response->json()['data']['attributes']);
         $this->assertEquals('Testing Attribute 1', $response->json()['data']['attributes'][0]['name']);
         $this->assertEquals('Testing Attribute 2', $response->json()['data']['attributes'][1]['name']);
     }
@@ -253,7 +277,7 @@ class ProductTest extends TestCase
     {
         $response = $this->call('POST', '/api/products/', [
             'name' => 'Testing Product',
-            'price' => 13.99,
+            'price' => '13.99',
             'attributes' => [9999],
         ]);
 
@@ -262,7 +286,6 @@ class ProductTest extends TestCase
         $this->assertEquals('Product Created', $response->json()['message']);
         $this->assertEquals('Testing Product', $response->json()['data']['name']);
         $this->assertEquals([], $response->json()['data']['attributes']);
-
     }
 
     public function testApiPostReturns422IfValidationFails()
@@ -289,7 +312,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = 11.99;
+        $product->price = '11.99';
         $product->save();
 
         $product->attributes()->attach([$attribute1->id]);
@@ -297,13 +320,14 @@ class ProductTest extends TestCase
         $response = $this->call('PUT', '/api/products/' . $product->id, [
             'name' => 'Testing Product Modified',
             'price' => 12.99,
-            'attributes' => [$attribute2->id],
+            'attributes' => [$attribute2->id, 9999],
         ]);
 
         $response->assertStatus(200);
 
         $this->assertEquals('Product Updated', $response->json()['message']);
         $this->assertEquals('Testing Product Modified', $response->json()['data']['name']);
+        $this->assertCount(1, $response->json()['data']['attributes']);
         $this->assertEquals('Testing Attribute 2', $response->json()['data']['attributes'][0]['name']);
     }
 
@@ -312,19 +336,19 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = 11.99;
+        $product->price = '11.99';
         $product->save();
 
         // Create attribute
-        $attribute1 = new Attribute();
-        $attribute1->name = 'Testing Attribute 1';
-        $attribute1->save();
+        $attribute = new Attribute();
+        $attribute->name = 'Testing Attribute 1';
+        $attribute->save();
 
-        $product->attributes()->attach([$attribute1->id]);
+        $product->attributes()->attach([$attribute->id]);
 
         $response = $this->call('PUT', '/api/products/' . $product->id, [
             'name' => 'Testing Product Modified',
-            'price' => 12.99,
+            'price' => '12.99',
             'attributes' => [9999],
         ]);
 
@@ -333,6 +357,9 @@ class ProductTest extends TestCase
         $this->assertEquals('Product Updated', $response->json()['message']);
         $this->assertEquals('Testing Product Modified', $response->json()['data']['name']);
         $this->assertEquals([], $response->json()['data']['attributes']);
+
+        // Check relation
+        $this->assertFalse($product->attributes()->exists($attribute->id));
     }
 
     public function testApiPutReturns404IfProductDoesNotExist()
@@ -347,7 +374,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = 11.99;
+        $product->price = '11.99';
         $product->save();
 
         $response = $this->call('PUT', '/api/products/' . $product->id, [
@@ -363,8 +390,15 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = 11.99;
+        $product->price = '11.99';
         $product->save();
+
+        // Create attribute
+        $attribute = new Attribute();
+        $attribute->name = 'Testing Attribute';
+        $attribute->save();
+
+        $product->attributes()->attach([$attribute->id]);
 
         $response = $this->call('DELETE', '/api/products/' . $product->id);
 
@@ -372,6 +406,9 @@ class ProductTest extends TestCase
 
         $this->assertEquals('Product Deleted', $response->json()['message']);
         $this->assertEquals('Testing Product', $response->json()['data']['name']);
+
+        // Check that ManyToMany relation was removed
+        $this->assertFalse($product->attributes()->exists($attribute->id));
     }
 
     public function testApiDeleteReturns404IfProductDoesNotExist()
