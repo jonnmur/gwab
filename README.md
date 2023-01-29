@@ -37,3 +37,31 @@
 1. Run `php artisan test` or `./vendor/bin/phpunit --testdox`.
 
 ## Assignment information
+
+Write a small API that uses a database backend.
+The main data entities in your API are product and attribute. Product can have multiple attributes.
+
+A product must have the following properties:
+* id
+* name
+* price
+
+An attribute has properties:
+* id
+* name
+
+1. Ensure you have all data needed for given task. If in doubt, ask.
+2. Implement API calls for
+    1. creating, updating and deleting these records.
+    2. retrieving
+        1. a list of products
+        2. searching a product by name
+        3. searching products by attribute
+3. Ensure API endpoints have proper error handling, responding with meaningful error messages. Responding with appropriate response code and type is a plus.
+4. Document the API. Explain the proper way to use it. Assume that the reader is not familiar with the API, and will be using it as a service without having access to the source code.
+
+Write the application either using PHP or Laravel. Use a MySQL database and git for version control.
+Please submit:
+* API source code (including a README file with deployment instructions);
+* SQL schema description;
+* Sufficient documentation as part of readme file.
