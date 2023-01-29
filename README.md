@@ -3,7 +3,8 @@
 1. Clone repository.
 2. Run `composer install`.
 3. Modify .env with correct database parameters.
-4. Run `php artisan migrate`.
+4. Run `php artisan key:generate`.
+5. Run `php artisan migrate`.
 
 ## Usage
 
