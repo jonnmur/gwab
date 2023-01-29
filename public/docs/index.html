@@ -117,7 +117,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: January 28 2023</li>
+        <li>Last updated: January 29 2023</li>
     </ul>
 </div>
 
@@ -240,7 +240,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"fugiat\"
+    \"name\": \"Tech\"
 }"
 </code></pre></div>
 
@@ -256,7 +256,7 @@ const headers = {
 };
 
 let body = {
-    "name": "fugiat"
+    "name": "Tech"
 };
 
 fetch(url, {
@@ -313,7 +313,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-attributes"
-               value="fugiat"
+               value="est"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -333,14 +333,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/attributes/1" \
+    --get "http://localhost:8000/api/attributes/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/attributes/1"
+    "http://localhost:8000/api/attributes/2"
 );
 
 const headers = {
@@ -400,7 +400,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="GETapi-attributes--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the attribute.</p>
@@ -420,18 +420,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/attributes/1" \
+    "http://localhost:8000/api/attributes/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"necessitatibus\"
+    \"name\": \"Tech\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/attributes/1"
+    "http://localhost:8000/api/attributes/2"
 );
 
 const headers = {
@@ -440,7 +440,7 @@ const headers = {
 };
 
 let body = {
-    "name": "necessitatibus"
+    "name": "Tech"
 };
 
 fetch(url, {
@@ -501,7 +501,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-attributes--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the attribute.</p>
@@ -512,7 +512,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-attributes--id-"
-               value="necessitatibus"
+               value="temporibus"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -532,18 +532,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/attributes/1" \
+    "http://localhost:8000/api/attributes/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptatum\"
+    \"name\": \"Tech\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/attributes/1"
+    "http://localhost:8000/api/attributes/2"
 );
 
 const headers = {
@@ -552,7 +552,7 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptatum"
+    "name": "Tech"
 };
 
 fetch(url, {
@@ -609,7 +609,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-attributes--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the attribute.</p>
@@ -620,7 +620,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="DELETEapi-attributes--id-"
-               value="voluptatum"
+               value="deserunt"
                data-component="body" hidden>
     <br>
 <p>Attribute name</p>
@@ -735,7 +735,7 @@ fetch(url, {
                 <input type="text"
                name="search"
                data-endpoint="GETapi-products"
-               value="ipsam"
+               value="aperiam"
                data-component="url" hidden>
     <br>
 <p>Filter products by name of the product or attribute.</p>
@@ -759,10 +759,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"cum\",
-    \"price\": 84763501.95,
+    \"name\": \"Lego Technic\",
+    \"price\": 59.99,
     \"attributes\": [
-        12
+        7
     ]
 }"
 </code></pre></div>
@@ -779,10 +779,10 @@ const headers = {
 };
 
 let body = {
-    "name": "cum",
-    "price": 84763501.95,
+    "name": "Lego Technic",
+    "price": 59.99,
     "attributes": [
-        12
+        7
     ]
 };
 
@@ -847,7 +847,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-products"
-               value="cum"
+               value="non"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -857,7 +857,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="POSTapi-products"
-               value="84763501.95"
+               value="1507876.55796"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
@@ -890,14 +890,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/products/1" \
+    --get "http://localhost:8000/api/products/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/products/1"
+    "http://localhost:8000/api/products/2"
 );
 
 const headers = {
@@ -964,7 +964,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="GETapi-products--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the product.</p>
@@ -984,14 +984,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/products/1" \
+    "http://localhost:8000/api/products/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"culpa\",
-    \"price\": 29.2,
+    \"name\": \"Lego Technic\",
+    \"price\": 59.99,
     \"attributes\": [
-        12
+        7
     ]
 }"
 </code></pre></div>
@@ -999,7 +999,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/products/1"
+    "http://localhost:8000/api/products/2"
 );
 
 const headers = {
@@ -1008,10 +1008,10 @@ const headers = {
 };
 
 let body = {
-    "name": "culpa",
-    "price": 29.2,
+    "name": "Lego Technic",
+    "price": 59.99,
     "attributes": [
-        12
+        7
     ]
 };
 
@@ -1080,7 +1080,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-products--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the product.</p>
@@ -1091,7 +1091,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-products--id-"
-               value="culpa"
+               value="repellat"
                data-component="body" hidden>
     <br>
 <p>Product name</p>
@@ -1101,7 +1101,7 @@ fetch(url, {
                 <input type="number"
                name="price"
                data-endpoint="PUTapi-products--id-"
-               value="29.2"
+               value="4763971.961"
                data-component="body" hidden>
     <br>
 <p>Product price</p>
@@ -1134,14 +1134,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/products/1" \
+    "http://localhost:8000/api/products/2" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/products/1"
+    "http://localhost:8000/api/products/2"
 );
 
 const headers = {
@@ -1209,7 +1209,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-products--id-"
-               value="1"
+               value="2"
                data-component="url" hidden>
     <br>
 <p>The ID of the product.</p>
