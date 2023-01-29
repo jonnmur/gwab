@@ -9,7 +9,7 @@
 ## Usage
 
 1. Run `php artisan serve` to start the PHP development server.
-2. Read API documentation: `YOURDEPLOYMENTSERVERURL:PORT/docs`.
+2. Read API documentation: `YOUR-DEPLOYMENT-SERVER-URL:PORT/docs`.
 3. Make requests to provided endpoints
 
 ## Created files for this assignment
