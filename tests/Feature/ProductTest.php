@@ -431,24 +431,6 @@ class ProductTest extends TestCase
         $response->assertStatus(404);
     }
 
-    /*
-    public function testApiPutReturns422IfValidationFails()
-    {
-        // Create product
-        $product = new Product();
-        $product->name = 'Testing Product';
-        $product->price = 11.99;
-        $product->save();
-
-        $response = $this->call('PUT', '/api/products/' . $product->id, [
-            'name' => '',
-            'price' => '',
-        ]);
-
-        $response->assertStatus(422);
-    }
-    */
-
     public function testApiPutReturns422IfNameRequiredValidationFails()
     {
         // Create product
