@@ -118,8 +118,8 @@ class ProductController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',
-                'price' => 'required',
+                'name' => 'required|unique:products|max:255',
+                'price' => 'required|numeric|between:0,999999.99',
             ],
         );
 
@@ -182,8 +182,9 @@ class ProductController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required',
-                'price' => 'required',
+                'name' => 'required|unique:products|max:255',
+                'name' => 'required|max:255|unique:products,name,' . $id . ',id',
+                'price' => 'required|numeric|between:0,999999.99',
             ],
         );
 

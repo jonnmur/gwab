@@ -71,7 +71,7 @@ class AttributeController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required|max:255',
+                'name' => 'required|unique:attributes|max:255',
             ],
         );
 
@@ -112,7 +112,7 @@ class AttributeController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'name' => 'required|max:255',
+                'name' => 'required|max:255|unique:attributes,name,' . $id . ',id',
             ],
         );
 
