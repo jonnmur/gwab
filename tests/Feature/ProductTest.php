@@ -26,14 +26,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = 'Testing Product 1';
-        $product1->price = '11.99';
+        $product1->price = 11.99;
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Testing Product 2';
-        $product2->price = '12.99';
+        $product2->price = 12.99;
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -88,14 +88,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = '1L Milk';
-        $product1->price = '1.19';
+        $product1->price = 1.19;
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Very Nice Microwave';
-        $product2->price = '299.99';
+        $product2->price = 299.99;
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -137,21 +137,21 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = '1L Milk';
-        $product1->price = '1.19';
+        $product1->price = 1.19;
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Very Nice Microwave';
-        $product2->price = '299.99';
+        $product2->price = 299.99;
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
 
         $product3 = new Product();
         $product3->name = 'Phone';
-        $product3->price = '959.99';
+        $product3->price = 959.99;
         $product3->save();
 
         $product3->attributes()->attach([$attribute2->id]);
@@ -208,14 +208,14 @@ class ProductTest extends TestCase
         // Create products
         $product1 = new Product();
         $product1->name = 'Testing Product 1';
-        $product1->price = '11.99';
+        $product1->price = 11.99;
         $product1->save();
 
         $product1->attributes()->attach([$attribute1->id]);
 
         $product2 = new Product();
         $product2->name = 'Testing Product 2';
-        $product2->price = '12.99';
+        $product2->price = 12.99;
         $product2->save();
 
         $product2->attributes()->attach([$attribute1->id, $attribute2->id]);
@@ -267,7 +267,7 @@ class ProductTest extends TestCase
 
         $this->assertEquals('Product Created', $response->json()['message']);
         $this->assertEquals('Testing Product', $response->json()['data']['name']);
-        $this->assertEquals('13.99', $response->json()['data']['price']);
+        $this->assertEquals(13.99, $response->json()['data']['price']);
         $this->assertCount(2, $response->json()['data']['attributes']);
         $this->assertEquals('Testing Attribute 1', $response->json()['data']['attributes'][0]['name']);
         $this->assertEquals('Testing Attribute 2', $response->json()['data']['attributes'][1]['name']);
@@ -277,7 +277,7 @@ class ProductTest extends TestCase
     {
         $response = $this->call('POST', '/api/products/', [
             'name' => 'Testing Product',
-            'price' => '13.99',
+            'price' => 13.99,
             'attributes' => [9999],
         ]);
 
@@ -312,7 +312,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = '11.99';
+        $product->price = 11.99;
         $product->save();
 
         $product->attributes()->attach([$attribute1->id]);
@@ -336,7 +336,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = '11.99';
+        $product->price = 11.99;
         $product->save();
 
         // Create attribute
@@ -348,7 +348,7 @@ class ProductTest extends TestCase
 
         $response = $this->call('PUT', '/api/products/' . $product->id, [
             'name' => 'Testing Product Modified',
-            'price' => '12.99',
+            'price' => 12.99,
             'attributes' => [9999],
         ]);
 
@@ -374,7 +374,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = '11.99';
+        $product->price = 11.99;
         $product->save();
 
         $response = $this->call('PUT', '/api/products/' . $product->id, [
@@ -390,7 +390,7 @@ class ProductTest extends TestCase
         // Create product
         $product = new Product();
         $product->name = 'Testing Product';
-        $product->price = '11.99';
+        $product->price = 11.99;
         $product->save();
 
         // Create attribute
